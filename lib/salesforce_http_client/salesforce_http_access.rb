@@ -35,13 +35,19 @@ module SalesforceHttpClient
       @logger.info "begin download reports"
       response = @http_client.get report_url(report_id)
       if response.status == 200
-        report_content = response.content
-        report_file = output_save_path
-        @logger.info "save result to file #{report_file}"
-        File.write(report_file, report_content)
+        save_report(response, output_save_path)
       else
         @logger.error "failed to download reports."
       end
+    end
+
+    def save_report(response, output_save_path)
+      report_content = response.content
+      report_file = output_save_path
+      @logger.info "save result to file #{report_file}"
+
+      FileUtils.mkdir_p(File.dirname(report_file))
+      File.write(report_file, report_content)
     end
 
     def salesforce_logout
