@@ -37,7 +37,8 @@ If you're using Rails, create an initializer for this:
 First, you need find the salesforce ID for your report.
 For example:  http://na1.salesforce.com/000000000000ABC, where '000000000000ABC' is the salesforce ID.
 
-Then, pass the salesforce ID and path where to save your report data into  SalesforceHttpClient::Client#download_report(salesforce_id, report_save_path).
+Then, pass the salesforce ID and a file path to  SalesforceHttpClient::Client#download_report(salesforce_id, report_save_path) method.
+
 ```ruby
 salesforce_id = '000000000000ABC'
 report_save_path = "tmp/#{salesforce_id}.csv"
@@ -46,7 +47,7 @@ sf_client = SalesforceHttpClient::Client.new
 sf_client.download_report(salesforce_id, report_save_path)
 ```
 
-Wait for a while, then check you report_save_path to find your report data in csv format.
+After a few seconds, you will find your report data(csv format) at report_save_path.
 
 ## Contributing
 
