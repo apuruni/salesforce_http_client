@@ -1,6 +1,7 @@
 # SalesforceHttpClient
 
-TODO: Write a gem description
+This gem provides a simple way to download report data from salesforce.com.
+It works well with any ruby applications, include such as Ruby on Rails.
 
 ## Installation
 
@@ -16,9 +17,36 @@ Or install it yourself as:
 
     $ gem install salesforce_http_client
 
-## Usage
+## Configuring SalesforceHttpClient
 
-TODO: Write usage instructions here
+Add configurations to set you salesforce.com login_id/password.
+
+```ruby
+SalesforceHttpClient.configure do |config|
+  config.salesforce_login_id = 'my_login_id_or_email'
+  config.salesforce_password = 'my_password'
+end
+```
+
+If you're using Rails, create an initializer for this:
+
+    config/initializers/salesforce_http_client.rb
+
+## Downloading report from salesforce.com
+
+First, you need find the salesforce ID for your report.
+For example:  http://na1.salesforce.com/000000000000ABC, where '000000000000ABC' is the salesforce ID.
+
+Then, pass the salesforce ID and path where to save your report data into  SalesforceHttpClient::Client#download_report(salesforce_id, report_save_path).
+```ruby
+salesforce_id = '000000000000ABC'
+report_save_path = "tmp/#{salesforce_id}.csv"
+
+sf_client = SalesforceHttpClient::Client.new
+sf_client.download_report(salesforce_id, report_save_path)
+```
+
+Wait for a while, then check you report_save_path to find your report data in csv format.
 
 ## Contributing
 
