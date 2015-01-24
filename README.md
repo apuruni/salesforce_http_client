@@ -2,6 +2,8 @@
 
 This gem provides a simple way to download report data from salesforce.com.
 It works well with any ruby applications, include such as Ruby on Rails.
+You can access salesfore.com using only your sales force login id (=email) and password. 
+A security token is no need.
 
 ## Installation
 
@@ -19,7 +21,7 @@ Or install it yourself as:
 
 ## Configuring SalesforceHttpClient
 
-Add configurations to set you salesforce.com login_id/password.
+Add configurations to set your salesforce.com login_id/password.
 
 ```ruby
 SalesforceHttpClient.configure do |config|
