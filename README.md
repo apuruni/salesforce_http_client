@@ -2,6 +2,7 @@
 
 This gem provides a simple way to download report data from salesforce.com.
 It works well with any ruby applications, include such as Ruby on Rails.
+
 You can access salesfore.com using only your sales force login id (=email) and password. 
 A security token is no need.
 
