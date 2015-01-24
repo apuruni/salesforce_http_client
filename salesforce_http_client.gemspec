@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = SalesforceHttpClient::VERSION
   spec.authors       = ["Apuruni"]
   spec.email         = ["apuruni@gmail.com"]
-  spec.summary       = "a http client for salesforce.com"
-  spec.description   = "allow you to download a report from salesforce.com quickly."
+  spec.summary       = "This gem provides a simple way to download report data from salesforce.com using only your sales force login id (=email) and password."
+  spec.description   = "This gem provides a simple way to download report data from salesforce.com. It works well with any ruby applications, include such as Ruby on Rails.You can access salesfore.com using only your sales force login id (=email) and password. A security token is no need."
   spec.homepage      = "https://github.com/apuruni/salesforce_http_client"
   spec.license       = "MIT"
 
