@@ -6,6 +6,8 @@ It works well with any ruby applications, include such as Ruby on Rails.
 You can access salesfore.com using only your sales force login id (=email) and password. 
 A security token is no need.
 
+[![Gem Version](https://badge.fury.io/rb/salesforce_http_client.svg)](http://badge.fury.io/rb/salesforce_http_client)
+
 ## Installation
 
 Add this line to your application's Gemfile:
