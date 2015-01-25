@@ -3,8 +3,10 @@
 This gem provides a simple way to download report data from salesforce.com.
 It works well with any ruby applications, include such as Ruby on Rails.
 
-You can access salesfore.com using only your sales force login id (=email) and password. 
+You can access salesfore.com using only your salesforce login id (=email) and password. 
 A security token is no need.
+
+Data will be saved in CSV format.
 
 [![Gem Version](https://badge.fury.io/rb/salesforce_http_client.svg)](http://badge.fury.io/rb/salesforce_http_client)
 [![Build Status](https://travis-ci.org/apuruni/salesforce_http_client.svg?branch=master)](https://travis-ci.org/apuruni/salesforce_http_client)
