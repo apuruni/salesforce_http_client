@@ -7,6 +7,7 @@ You can access salesfore.com using only your sales force login id (=email) and p
 A security token is no need.
 
 [![Gem Version](https://badge.fury.io/rb/salesforce_http_client.svg)](http://badge.fury.io/rb/salesforce_http_client)
+[![Build Status](https://travis-ci.org/apuruni/salesforce_http_client.svg?branch=master)](https://travis-ci.org/apuruni/salesforce_http_client)
 
 ## Installation
 
