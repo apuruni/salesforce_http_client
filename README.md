@@ -8,6 +8,7 @@ A security token is no need.
 
 [![Gem Version](https://badge.fury.io/rb/salesforce_http_client.svg)](http://badge.fury.io/rb/salesforce_http_client)
 [![Build Status](https://travis-ci.org/apuruni/salesforce_http_client.svg?branch=master)](https://travis-ci.org/apuruni/salesforce_http_client)
+[![Coverage Status](https://coveralls.io/repos/apuruni/salesforce_http_client/badge.svg?branch=master)](https://coveralls.io/r/apuruni/salesforce_http_client?branch=master)
 
 ## Installation
 
