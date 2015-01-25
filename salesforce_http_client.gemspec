@@ -30,4 +30,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "guard-rubocop"
   spec.add_development_dependency "pry"
   spec.add_development_dependency "webmock"
+  spec.add_development_dependency "coveralls"
 end
