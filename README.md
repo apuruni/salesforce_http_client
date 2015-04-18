@@ -31,9 +31,14 @@ Or install it yourself as:
 Add configurations to set your salesforce.com login_id/password.
 
 ```ruby
+require 'fileutils'
+require 'httpclient'
+
 SalesforceHttpClient.configure do |config|
   config.salesforce_login_id = 'my_login_id_or_email'
   config.salesforce_password = 'my_password'
+  # this parameter must be set except you are using ap.salesforce.com sub domain.
+  config.salesforce_report_url_format = 'https://na12.salesforce.com/#{report_id}?export=1&enc=UTF-8&xf=csv'
 end
 ```
 
