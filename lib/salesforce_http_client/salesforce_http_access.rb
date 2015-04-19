@@ -52,7 +52,7 @@ module SalesforceHttpClient
 
     def salesforce_logout
       @logger.info "try salesforce logout..."
-      @http_client.get config.salesforce_logout_url
+      @http_client.get config.logout_url
       @logger.info "salesforce logged out."
     end
   end

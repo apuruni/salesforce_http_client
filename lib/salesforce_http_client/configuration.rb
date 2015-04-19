@@ -15,6 +15,7 @@ module SalesforceHttpClient
     attr_accessor :salesforce_login_id
     attr_accessor :salesforce_password
 
+    attr_accessor :salesforce_instance_domain
     attr_accessor :salesforce_report_url_format
     attr_accessor :salesforce_report_id_param
 
@@ -29,10 +30,12 @@ module SalesforceHttpClient
     end
 
     def initialize
-      @salesforce_login_url = "https://login.salesforce.com/"
-      @salesforce_logout_url = "https://ap.salesforce.com/secur/logout.jsp"
+      @salesforce_instance_domain = "https://ap.salesforce.com"
 
-      @salesforce_report_url_format = 'https://ap.salesforce.com/#{report_id}?export=1&enc=UTF-8&xf=csv'
+      @salesforce_login_url = "https://login.salesforce.com/"
+      @salesforce_logout_url = ->() { @salesforce_instance_domain + "/secur/logout.jsp" }
+
+      @salesforce_report_url_format = ->() { @salesforce_instance_domain + '/#{report_id}?export=1&enc=UTF-8&xf=csv' }
       @salesforce_report_id_param = '#{report_id}'
 
       @http_timeout = 5 * 60 * 1000
@@ -42,7 +45,21 @@ module SalesforceHttpClient
     end
 
     def report_url(report_id)
-      @salesforce_report_url_format.gsub(@salesforce_report_id_param, report_id)
+      if @salesforce_report_url_format.is_a? Proc
+        url_format = @salesforce_report_url_format.call
+      else
+        url_format = salesforce_report_url_format
+      end
+
+      url_format.gsub(@salesforce_report_id_param, report_id)
+    end
+
+    def logout_url
+      if @salesforce_logout_url.is_a? Proc
+        @salesforce_logout_url.call
+      else
+        @salesforce_logout_url
+      end
     end
 
     def cookie_store_file_path
