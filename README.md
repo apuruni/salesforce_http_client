@@ -30,7 +30,7 @@ Or install it yourself as:
 
 Add configurations to set your salesforce.com login_id/password.
 You must check your salesforce.com instance to get the right domain for your account.
-For example:  https://na1.salesforce.com/000000000000ABC, where 'http://na1.salesforce.com/' is the salesforce.com instance domain.
+For example:  https://na12.salesforce.com/000000000000ABC, where 'http://na12.salesforce.com/' is the salesforce.com instance domain.
 
 ```ruby
 require 'fileutils'
