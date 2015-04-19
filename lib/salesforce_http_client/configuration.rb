@@ -63,7 +63,9 @@ module SalesforceHttpClient
     end
 
     def cookie_store_file_path
-      File.join(@tmp_dir, 'cookie_store.dat')
+      file_path = File.join(@tmp_dir, 'cookie_store.dat')
+      FileUtils.mkdir_p(File.dirname(file_path))
+      file_path
     end
 
     private
