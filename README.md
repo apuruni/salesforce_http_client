@@ -29,6 +29,8 @@ Or install it yourself as:
 ## Configuring SalesforceHttpClient
 
 Add configurations to set your salesforce.com login_id/password.
+You must check your salesforce.com instance to get the right domain for your account.
+For example:  https://na1.salesforce.com/000000000000ABC, where 'http://na1.salesforce.com/' is the salesforce.com instance domain.
 
 ```ruby
 require 'fileutils'
@@ -37,8 +39,8 @@ require 'httpclient'
 SalesforceHttpClient.configure do |config|
   config.salesforce_login_id = 'my_login_id_or_email'
   config.salesforce_password = 'my_password'
-  # this parameter must be set except you are using ap.salesforce.com sub domain.
-  config.salesforce_report_url_format = 'https://na12.salesforce.com/#{report_id}?export=1&enc=UTF-8&xf=csv'
+  # this parameter must be set if you are not using the default (ap.salesforce.com) instance domain of this gem.
+  config.salesforce_instance_domain = 'https://na12.salesforce.com'
 end
 ```
 
